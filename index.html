@@ -14,6 +14,14 @@
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
 
+<style>
+    /* .big{
+        font-size:2.5em;
+        font-weight: 100;
+        padding-right:10px;
+    } */
+</style>
+
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -123,43 +131,52 @@
                     <div class="row mt-3">
                         <div class="col">
                             <p>
-                                <b class="big">1.</b> We send a sample collection kit to your home. The kit is general purpose and can be used
-                                for any future viral pandemic. 
+                                <b class="big">1.</b>
+                                We send a sample collection kit to your home. The kit is general purpose and can be used
+                                for any future pandemic. 
                             </p>
                         </div>
+                        <!-- <div class="col-1"></div> -->
                         <div class="col">
-                            <img src="imgs/Step1_Anytime_user.png" width=200>
+                            <img src="imgs/Step1_Anytime_user_v2.png" width=200>
                         </div>
                     </div>
-                    <div class="row mt-5 pt-3">
+                    <!-- <div class="row mt-3"></div> -->
+                    <div class="row mt-5 pt-1">
                         <div class="col justify-content-end">
-                            <img class="float-right" src="imgs/Step2_Anytime_us_2.png" width=350>
+                            <img class="float-right" src="imgs/Step2_Anytime_us_2_v2.png" width=350>
                         </div>
+                        <!-- <div class="col-1"></div> -->
                         <div class="col">
                             <p>
-                                <b>2.</b> We actively monitor emerging pathogens globally 
+                                <b class="big">2.</b>
+                                We actively monitor emerging pathogens globally 
                                 and when appropriate begin stockpiling testing reagents.
                             </p>
                         </div>
                     </div>
-                    <div class="row mt-5 pt-3">
+                    <div class="row mt-5 pt-1">
                         <div class="col">
                             <p>
-                                <b>3.</b> When the next pandemic comes, you safely test yourself at home. You send 
+                                <b class="big">3.</b>
+                                 When the next pandemic comes, you safely test yourself at home. You send 
                                 the same back to us for analysis.
                             </p>
                         </div>
+                        <!-- <div class="col-1"></div> -->
                         <div class="col">
-                            <img src="imgs/Step3_Pandemic_user_3_v2.png" width=200>
+                            <img src="imgs/Step3_Pandemic_user_3_v3.png" width=200>
                         </div>
                     </div>
-                    <div class="row mt-5 pt-3">
+                    <div class="row mt-5 pt-1">
                         <div class="col">
-                            <img class="float-right" src="imgs/Step4_Pandemic_us_4_v2.png" width=350>
+                            <img class="float-right" src="imgs/Step4_Pandemic_us_4_v3.png" width=350>
                         </div>
+                        <!-- <div class="col-1"></div> -->
                         <div class="col">
-                            <b>4.</b> We analyze your test sample and report results back to you online. 
-                            We coordinate with the CDC and local governments to monitor the spread 
+                            <b class="big">4.</b>
+                            We analyze your test sample and report results back to you online. 
+                            We also coordinate with the CDC and local governments to monitor the spread 
                             of the pandemic and use our test samples to aid drug discovery.
                         </div>
                     </div>
@@ -170,9 +187,16 @@
                     <h3 id="why">Motivation</h3>
                     <p>
                         With COVID-19, we've seen that regions with a rapid testing response do much better at 
-                        controlling the spread of the virus. For example, Guangzhou, China (as big as XXX) was 
-                        able to test X people in the first N days after a positive case was reported in the region. 
-                        Combined with tracing, this enabled the government to completely stop its spread by N.
+                        controlling the spread of the virus. For example, Guangdong, China (five times more populated 
+                        than NY State) was able to test 
+                        <a href="https://www.sciencemag.org/news/2020/03/china-s-aggressive-measures-have-slowed-coronavirus-they-may-not-work-other-countries">more than 340,000 people</a>
+                        by March 2nd 2020. 
+                        Combined with strict social distancing, this enabled the province to stop the spreading of 
+                        COVID-19. In comparison, by March 19th 2020 NY State has only conducted 
+                        <a href="https://www.businessinsider.com/new-york-state-coronavirus-testing-compared-to-other-countries-2020-3">around 32,000 tests</a>.
+                    </p>
+                    <p class="text-center">
+                        <img class="mt-2" src="imgs/guangdong_vs_ny_v2.png" width=500>
                     </p>
                     <p>
                         By putting general purpose sample collecting kits into the homes of millions of Americans 
@@ -189,7 +213,6 @@
                     <p>
                         Through the large number of potential tests we aim to control, we can coordinate with the CDC, 
                         FDA and other agencies much more effectively than any individual institute alone.
-
                     </p>
 
                     <!-- <div class="row mt-3">
