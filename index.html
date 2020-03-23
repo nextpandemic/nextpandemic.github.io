@@ -58,13 +58,16 @@
       var location = $("#form_location").val();
       var feedback = $("#form_feedback").val();
       var price = $("#form_price").val();
+      var d = new Date();
+      var time_millis = d.getTime();
 
     if (email !== "" && email !== null){
         db.collection("signup-list").add({
             email: email,
             location: location,
             feedback: feedback,
-            price: price
+            price: price,
+            time: time_millis
         })
         .then(function(docRef) {
             // console.log("Document written with ID: ", docRef.id);
@@ -180,7 +183,7 @@
                             <p>
                                 <b class="big">3.</b>
                                  When the next pandemic comes, you safely test yourself at home. You send 
-                                the same back to us for analysis.
+                                the sample back to us for analysis.
                             </p>
                         </div>
                         <!-- <div class="col-1"></div> -->
@@ -231,7 +234,7 @@
                         <li>A jumpstart on vaccine and drug development</li>
                     </ul>
                     <p>
-                        Through the large number of potential tests we aim to control, we can coordinate with the CDC, 
+                        Through the large number of potential tests we aim to distribute, we can coordinate with the CDC, 
                         FDA and other agencies much more effectively than any individual institute alone.
                     </p>
 
@@ -323,7 +326,7 @@
             <div class="row mb-5">
                 <div class="col" id="formarea">
                     <h3 id="signup">Sign Up</h3>
-                    <h6>We'll reach out to you when we are ready to start shipping tests.</h6>
+                    <h6>We'll reach out to you when we are ready to start shipping kits.</h6>
                     <div class="mt-1 mb-1" id="alertarea"></div>
                     <div class="row">
                         <div class="col-md-auto">
