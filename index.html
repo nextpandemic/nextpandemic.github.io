@@ -1,0 +1,316 @@
+<html>
+    <title>nextpandemic - tagline</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBO3lo15h2yHEVcnr-c_byCeYfEFIRocU4",
+    authDomain: "nextpandemic-6b89a.firebaseapp.com",
+    databaseURL: "https://nextpandemic-6b89a.firebaseio.com",
+    projectId: "nextpandemic-6b89a",
+    storageBucket: "nextpandemic-6b89a.appspot.com",
+    messagingSenderId: "605733642614",
+    appId: "1:605733642614:web:8c3ea42f8a515bbb2a1a57",
+    measurementId: "G-YB4YYT3EZE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  console.log(firebase);
+
+  var db = firebase.firestore();
+
+  console.log(db);
+
+  function doform(){
+
+      var email = $("#form_email").val();
+      var location = $("#form_location").val();
+      var feedback = $("#form_feedback").val();
+      var price = $("#form_price").val();
+
+    db.collection("signup-list").add({
+        email: email,
+        location: location,
+        feedback: feedback,
+        price: price
+    })
+    .then(function(docRef) {
+        // console.log("Document written with ID: ", docRef.id);
+        $("#alertarea").html('<div class="alert alert-success" id="success_alert" role="alert">Thanks for signing up!</div>');
+        $("#signup_form").remove();
+        // $("#form_email").val("");
+        // $("#form_location").val("");
+        // $("#form_feedback").val("");
+        // $("#form_price").val("");
+    })
+    .catch(function(error) {
+        // console.error("Error adding document: ", error);
+        $("#alertarea").html('<div class="alert alert-danger" id="fail_alert" role="alert">Something went wrong. Please try signing up again.</div>');
+
+    });
+
+
+  }
+
+//   window.db = firebase.firestore();
+
+</script>
+    
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand ml-4" href="#"><b>next</b>pandemic</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto ml-4">
+                <li class="nav-item">
+                  <a class="nav-link" href="#how">How does this work?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#why">Why do we need this?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#QA">Q&A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#signup">Sign Up</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center mt-5 mb-5 display-4">Get tested at home when the next pandemic comes</h2>
+            </div>
+            <div class="row mb-5 pb-5">
+                <div class="col text-center">
+                    <a class="btn btn-primary" href="#signup" role="button">Sign up to hear when kits are ready!</a>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <h3 id="how">How does this work?</h3>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p>
+                                <b class="big">1.</b> We send a sample collection kit to your home. The kit is general purpose and can be used
+                                for any future viral pandemic. 
+                            </p>
+                        </div>
+                        <div class="col">
+                            <img src="imgs/Step1_Anytime_user.png" width=200>
+                        </div>
+                    </div>
+                    <div class="row mt-5 pt-3">
+                        <div class="col justify-content-end">
+                            <img class="float-right" src="imgs/Step2_Anytime_us_2.png" width=350>
+                        </div>
+                        <div class="col">
+                            <p>
+                                <b>2.</b> We actively monitor emerging pathogens globally 
+                                and when appropriate begin stockpiling testing reagents.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-5 pt-3">
+                        <div class="col">
+                            <p>
+                                <b>3.</b> When the next pandemic comes, you safely test yourself at home. You send 
+                                the same back to us for analysis.
+                            </p>
+                        </div>
+                        <div class="col">
+                            <img src="imgs/Step3_Pandemic_user_3_v2.png" width=200>
+                        </div>
+                    </div>
+                    <div class="row mt-5 pt-3">
+                        <div class="col">
+                            <img class="float-right" src="imgs/Step4_Pandemic_us_4_v2.png" width=350>
+                        </div>
+                        <div class="col">
+                            <b>4.</b> We analyze your test sample and report results back to you online. 
+                            We coordinate with the CDC and local governments to monitor the spread 
+                            of the pandemic and use our test samples to aid drug discovery.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <h3 id="why">Why do we need this?</h3>
+                    <p>
+                        With COVID-19, we've seen that regions with a rapid testing response do much better at 
+                        controlling the spread of the virus. For example, Guangzhou, China (as big as XXX) was 
+                        able to test X people in the first N days after a positive case was reported in the region. 
+                        Combined with tracing, this enabled the government to completely stop its spread by N.
+                    </p>
+                    <p>
+                        By putting general purpose sample collecting kits into the homes of millions of Americans 
+                        and stockpiling critical testing reagents, we can test much more rapidly when the next 
+                        pandemic comes. In particular, we can start ramping up testing capacity with our partners 
+                        before the pandemic hits the US. The tests gathered from our network will enable:    
+                    </p>
+                    <ul>
+                        <li>More informed decision-making among individuals</li>
+                        <li>Real-time monitoring of disease prevalence and spread</li>
+                        <li>A reduced burden on local hospitals for testing</li>
+                        <li>A jumpstart on vaccine and drug development</li>
+                    </ul>
+                    <p>
+                        Through the large number of potential tests we aim to control, we can coordinate with the CDC, 
+                        FDA and other agencies much more effectively than any individual institute alone.
+
+                    </p>
+
+                    <!-- <div class="row mt-3">
+                        <div class="col">
+                            <a class="btn btn-primary" href="#signup" role="button">Sign up</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col">
+                    <h3 id="QA">Q&A</h3>
+                    <div class="row">
+                        <div class="col">
+                            <h5>Can you test me for COVID-19?</h3>
+                            <p>
+                                No, this project is focused on monitoring and controlling the next pandemic. 
+                                For more on the current state of COVID-19 testing, you can visit the 
+                                <a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html">CDC website</a>. 
+                                Others have also created a 
+                                <a href="https://coronavirus.1point3acres.com/en/test">list of locations</a> 
+                                where you can get tested. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5>How can I contribute to this project?</h3>
+                            <p>
+                                The best way for most people to contribute is to sign up for a home sample collection kit and become part of our pandemic monitoring network. 
+                                We are also looking to partner with individuals or organizations with expertise in assay development, epidemiology, biomedical regulations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5>Will you support countries besides the US?</h3>
+                            <p>
+                                Our pilot project is focused on the US, but given sufficient demand we hope to 
+                                expand to other countries and regions. To better gauge interest, we encourage you 
+                                to sign up even if you do not live in the United States.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5>How will you manage to test millions of people so quickly?</h3>
+                            <p>
+                                Home collection kits allow us to save time by eliminating sample collection steps 
+                                that are extremely resource and labor intensive. More importantly, the scale of our 
+                                network will allow us to work with testing partners to ensure that we have a stockpile 
+                                of reagents ready to dispatch when the next pandemic comes. By monitoring emerging 
+                                pathogens through academic partners, we will also be able to prepare for potential 
+                                pandemics much sooner.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5>Is your test FDA approved?</h3>
+                            <p>
+                                We can’t preemptively create an FDA approved diagnostic for a disease that does not exist 
+                                yet. However, once an emerging pathogen has been identified, we will work with testing 
+                                partners and the US FDA to certify our test with or without 
+                                <a href="https://www.fda.gov/medical-devices/emergency-situations-medical-devices/emergency-use-authorizations#coronavirus2019">
+                                    Emergency Use Authorizations.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5>How do you know you can develop a test for a future pandemic?</h3>
+                            <p>
+                                Almost all pandemics are caused by 
+                                <a href="https://en.wikipedia.org/wiki/List_of_epidemics">bacteria and viruses</a>, 
+                                each of which carry distinct DNA 
+                                or RNA signatures. A technology called polymerase chain reaction (PCR) can rapidly amplify 
+                                trace amounts of these pathogen signatures within a patient sample, allowing us to easily 
+                                test for its presence. At most it takes a few weeks to construct a new PCR test once the 
+                                genome of a new pathogen has been sequenced. Often the process can be accomplished faster, 
+                                within days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col" id="formarea">
+                    <h3 id="signup">Sign Up</h3>
+                    <h6>We'll reach out to you when we are ready to start shipping tests.</h6>
+                    <div class="mt-1 mb-1" id="alertarea"></div>
+                    <div class="row">
+                        <div class="col">
+                            <form id="signup_form">
+                                <div class="form-group mt-2">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Where do you live? (optional)</label>
+                                  <input type="text" class="form-control" id="form_location">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">How much would you pay to join the network? (optional)</label>
+                                    <select class="form-control" id="form_price">
+                                        <option disabled selected value> -- select an option -- </option>
+                                        <option>$0</option>
+                                        <option>$25 or less</option>
+                                        <option>$25 to $50</option>
+                                        <option>$50 to $100</option>
+                                        <option>$100 to $150</option>
+                                        <option>$150 to $200</option>
+                                    </select>
+                                  </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Any other feedback you have for us? (optional)</label>
+                                    <textarea class="form-control" id="form_feedback" rows="3"></textarea>
+                                </div>
+                                <button type="submit" onclick="doform()" class="btn btn-primary">Submit</button>
+                              </form>
+
+                        </div>
+                        <div class="col">
+
+                        </div>
+                    </div> 
+                </div>
+    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
