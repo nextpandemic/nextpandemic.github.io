@@ -74,7 +74,10 @@
     
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand ml-4" href="#"><b>next</b>pandemic</a>
+            <a class="navbar-brand ml-4" href="#">
+                <img src="imgs/noun_virus_2745926.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <b>next</b>pandemic
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -82,15 +85,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto ml-4">
                 <li class="nav-item">
-                  <a class="nav-link" href="#how">How does this work?</a>
+                  <a class="nav-link" href="#how">How it works</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#why">Why do we need this?</a>
+                  <a class="nav-link" href="#why">Motivation</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#QA">Q&A</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link btn btn-outline-primary ml-5" href="#signup" role="button">Sign up</a> -->
+
                     <a class="nav-link" href="#signup">Sign Up</a>
                 </li>
               </ul>
@@ -98,7 +106,11 @@
           </nav>
         <div class="container">
             <div class="row">
-                <h1 class="text-center mt-5 mb-5 display-4">Get tested at home when the next pandemic comes</h2>
+                <div class="col"></div>
+                <div class="col-10">
+                    <h1 class="text-center mt-5 mb-5 display-4">Get tested at home when the next pandemic comes</h2>
+                </div>
+                <div class="col"></div>
             </div>
             <div class="row mb-5 pb-5">
                 <div class="col text-center">
@@ -107,7 +119,7 @@
             </div>
             <div class="row mb-5">
                 <div class="col">
-                    <h3 id="how">How does this work?</h3>
+                    <h3 id="how">How it works</h3>
                     <div class="row mt-3">
                         <div class="col">
                             <p>
@@ -155,7 +167,7 @@
             </div>
             <div class="row mb-5">
                 <div class="col">
-                    <h3 id="why">Why do we need this?</h3>
+                    <h3 id="why">Motivation</h3>
                     <p>
                         With COVID-19, we've seen that regions with a rapid testing response do much better at 
                         controlling the spread of the virus. For example, Guangzhou, China (as big as XXX) was 
@@ -271,7 +283,7 @@
                     <h6>We'll reach out to you when we are ready to start shipping tests.</h6>
                     <div class="mt-1 mb-1" id="alertarea"></div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-auto">
                             <form id="signup_form">
                                 <div class="form-group mt-2">
                                   <label for="exampleInputEmail1">Email address</label>
@@ -295,7 +307,7 @@
                                     </select>
                                   </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Any other feedback you have for us? (optional)</label>
+                                    <label for="exampleFormControlTextarea1">Any feedback you have for us? (optional)</label>
                                     <textarea class="form-control" id="form_feedback" rows="3"></textarea>
                                 </div>
                                 <button type="submit" onclick="doform()" class="btn btn-primary">Submit</button>
@@ -309,8 +321,23 @@
                 </div>
     
                 </div>
+                <div class="row mb-5">
+                    <div class="col">
+                        <h3 id="contact">Contact</h3>
+                        <p>
+                            If you are interested in partnering, have a media query, or would like to provide any other
+                            kind of support, you can reach us at 
+                            <a href="mailto:team@nextpandemic.org">team@nextpandemic.org</a>.
+                        </p>
+                    </div>
+                </div>
             </div>
+            
         </div>
-        
+        <footer class="footer">
+            <div class="container text-center mb-3">
+                <p><small>© 2020 nextpandemic.org</small></p>
+            </div>
+        </footer>
     </body>
 </html>
