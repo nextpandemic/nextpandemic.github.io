@@ -1,7 +1,7 @@
 <html>
     <head>
 
-    <title>nextpandemic - help us contain the next pandemic through home testing</title>
+    <title>nextpandemic - help contain the next pandemic through home testing</title>
     <link rel="shortcut icon" type="image/jpg" href="imgs/favicon/favicon.ico"/>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -57,6 +57,7 @@
       var email = $("#form_email").val();
       var location = $("#form_location").val();
       var feedback = $("#form_feedback").val();
+      var name = $("#form_name").val();
       var price = $("#form_price").val();
       var d = new Date();
       var time_millis = d.getTime();
@@ -64,6 +65,7 @@
     if (email !== "" && email !== null){
         db.collection("signup-list").add({
             email: email,
+            name: name,
             location: location,
             feedback: feedback,
             price: price,
@@ -75,6 +77,7 @@
             // $("#signup_form").remove();
             $("#form_email").val("");
             $("#form_location").val("");
+            $("#form_name").val("");
             $("#form_feedback").val("");
             $("#form_price").val("");
         })
@@ -139,13 +142,13 @@
             <div class="row">
                 <div class="col"></div>
                 <div class="col-10">
-                    <h1 class="text-center mt-5 mb-5 display-4">Help us contain the next pandemic through home testing</h2>
+                    <h1 class="text-center mt-5 mb-5 display-4">Help contain the next pandemic through home testing</h2>
                 </div>
                 <div class="col"></div>
             </div>
             <div class="row mb-5 pb-5">
                 <div class="col text-center">
-                    <a class="btn btn-primary" href="#signup" role="button">Sign up to support our network!</a>
+                    <a class="btn btn-primary" href="#signup" role="button">Sign up to support the network!</a>
                 </div>
             </div>
             <div class="row mb-5">
@@ -205,6 +208,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row mt-5 pt-3 pb-5">
+                <div class="col text-center">
+                    <a class="btn btn-primary" href="#signup" role="button">Sign up to support the network!</a>
+                </div>
+            </div>
             <div class="row mb-5">
                 <div class="col">
                     <h3 id="why">Motivation</h3>
@@ -221,7 +229,7 @@
                         <a href="https://www.businessinsider.com/new-york-state-coronavirus-testing-compared-to-other-countries-2020-3">around 32,000 tests</a>.
                     </p>
                     <p class="text-center">
-                        <img class="mt-2" src="imgs/guangdong_vs_ny_v2.png" width=500>
+                        <img class="mt-2" src="imgs/guangdong_vs_ny_v3.png" width=500>
                     </p>
                     <p>
                         By putting general purpose sample collecting kits into the homes of millions of Americans 
@@ -245,6 +253,11 @@
                             <a class="btn btn-primary" href="#signup" role="button">Sign up</a>
                         </div>
                     </div> -->
+                </div>
+            </div>
+            <div class="row mt-5 pb-5">
+                <div class="col text-center">
+                    <a class="btn btn-primary" href="#signup" role="button">Sign up to support the network!</a>
                 </div>
             </div>
             <div class="row mb-5">
@@ -281,7 +294,26 @@
                             </p>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col">
+                            <h5>Who is behind this project?</h3>
+                            <p>
+                                <a href="https://www.linkedin.com/in/binbin-chen-a1a52824/">Binbin Chen</a> and 
+                                <a href="http://ethanfast.com">Ethan Fast</a>. 
+                                We are Stanford-trained scientists frustrated with the state of early testing for COVID-19 in the US. We want 
+                                to work across communities to ensure that the US is prepared for the next pandemic and provide a much easier way for people to assess their 
+                                infection status. Binbin did his PhD work in 
+                                <a href="https://scholar.google.com/citations?user=qLDCUMQAAAAJ&hl=en">machine learning and immunology</a> 
+                                and will receive his MD in 2021. Ethan’s PhD work focused on 
+                                <a href="https://scholar.google.com/citations?user=PMjGlW4AAAAJ&hl=en">human-computer interaction and machine learning</a> 
+                                and he has co-founded several previous technology 
+                                companies.
+                                Notably, in February 2020 we identified 
+                                <a href="https://www.biorxiv.org/content/10.1101/2020.02.19.955484v2">a list of candidate epitopes</a> 
+                                for potential COVID-19 vaccines.
+                            </p>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <h5>How will you manage to test many people quickly?</h3>
@@ -349,9 +381,8 @@
             </div>
             <div class="row mb-5">
                 <div class="col" id="formarea">
-                    <h3 id="signup">Support Us</h3>
-                    <p> By signing up you can help us apply for grants and form partnerships 
-                        with testing centers. We will not purchase any testing supplies until the 
+                    <h3 id="signup">Support this idea!</h3>
+                    <p> Signing up makes it possible for us to apply for grants. We will not purchase any testing supplies until the 
                         COVID-19 crisis is fully resolved.</p>
                     <div class="mt-1 mb-1" id="alertarea"></div>
                     <div class="row">
@@ -362,6 +393,10 @@
                                   <input type="email" class="form-control" id="form_email" aria-describedby="emailHelp">
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
+                                <div class="form-group">
+                                    <label for="name">Full name (optional)</label>
+                                    <input type="text" class="form-control" id="form_name">
+                                  </div>
                                 <div class="form-group">
                                   <label for="exampleInputPassword1">Where do you live? (optional)</label>
                                   <input type="text" class="form-control" id="form_location">
