@@ -62,6 +62,8 @@
       var d = new Date();
       var time_millis = d.getTime();
 
+      var twitter_link = "<a target='_blank' href='https://twitter.com/intent/tweet?text=Sign%20up%20to%20help%20contain%20the%20next%20pandemic%20through%20home%20testing!%20@next_pandemic%20https://www.nextpandemic.org/'>Tweet it?</a>";
+
     if (email !== "" && email !== null){
         db.collection("signup-list").add({
             email: email,
@@ -73,7 +75,7 @@
         })
         .then(function(docRef) {
             // console.log("Document written with ID: ", docRef.id);
-            $("#alertarea").html('<div class="alert alert-success" id="success_alert" role="alert">Thanks for signing up! Share on social media?</div>');
+            $("#alertarea").html('<div class="alert alert-success" id="success_alert" role="alert">Thanks for signing up! Share on social media? '+twitter_link+'</div>');
             // $("#signup_form").remove();
             $("#form_email").val("");
             $("#form_location").val("");
